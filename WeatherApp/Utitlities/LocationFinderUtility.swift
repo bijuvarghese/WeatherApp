@@ -15,6 +15,7 @@ enum WeatherAppError: Error {
     case apiError
     case geocoderError
     case unknownError
+    case locationInputEmptyError
     // can be given a more meaningful error title
     var title: String {
         get {
@@ -29,6 +30,8 @@ enum WeatherAppError: Error {
                 return "Network Error"
             case .geocoderError:
                 return "Geo Coder Error"
+            case .locationInputEmptyError:
+                return "Empty Location Text"
             }
         }
     }
@@ -46,6 +49,8 @@ enum WeatherAppError: Error {
                 return "API errror"
             case .geocoderError:
                 return "Geocoder error - lat or lon missing"
+            case .locationInputEmptyError:
+                return "Empty location provided in text field"
             }
         }
     }
