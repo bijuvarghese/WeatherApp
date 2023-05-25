@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 typealias WeatherResponseClosure = (Result<WeatherResponse, WeatherAppError>) -> Void
 typealias GeoCoderResponseClosure = (Result<GeocoderResponse, WeatherAppError>) -> Void
 
@@ -16,9 +17,13 @@ protocol OpenWeatherAPI {
 
 
 class WeatherApiManager: OpenWeatherAPI {
+    
     var weatherServiceInvoker: ServiceInvoker<WeatherResponse>?
     var geoCoderServiceInvoker: ServiceInvoker<GeocoderResponse>?
 
+    /*
+     call geocoder api with input value from the text field
+     */
     func callGEOCoderAPI(textValue: String, completion: GeoCoderResponseClosure?) {
         let urlStr = AppConfig.baseurl + AppConfig.geoAPI +  "q=\(textValue)&limit=\(AppConfig.geoAPILimit)&appid=\(AppConfig.apiKey)&units=imperial"
         print(urlStr)
@@ -38,6 +43,9 @@ class WeatherApiManager: OpenWeatherAPI {
 
     }
     
+    /*
+     call weather api with location from the text field
+     */
     func callWeatherAPI(location: Location, completion: WeatherResponseClosure?) {
         // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
         let urlStr = AppConfig.baseurl + AppConfig.weatherAPI + "lat=\(location.latitude)&lon=\(location.longitude)&appid=\(AppConfig.apiKey)&units=imperial"
