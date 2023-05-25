@@ -1,0 +1,43 @@
+{
+  "coord": {
+    "lon": -96.9442,
+    "lat": 32.8295
+  },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 83.25,
+    "feels_like": 83.66,
+    "temp_min": 80.46,
+    "temp_max": 86.02,
+    "pressure": 1015,
+    "humidity": 47
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 9.22,
+    "deg": 120
+  },
+  "clouds": {
+    "all": 75
+  },
+  "dt": 1685049456,
+  "sys": {
+    "type": 1,
+    "id": 3783,
+    "country": "US",
+    "sunrise": 1685013798,
+    "sunset": 1685064386
+  },
+  "timezone": -18000,
+  "id": 4700168,
+  "name": "Irving",
+  "cod": 200
+}
